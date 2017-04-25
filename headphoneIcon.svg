@@ -45,8 +45,8 @@
                 var svgIcon = document.getElementById("svgIcon");
                 if (isMusicPlaying) {
                     // Stop Music
-                    audioPlayer.pause();
                     audioPlayer.currentTime = 0;
+                    audioPlayer.pause();
                     svgIcon.style.transform = "rotate(0deg)";
 
                     headsetDOM.classList.add("musicStopped");
@@ -54,6 +54,8 @@
                 }
                 else {
                     // Play Music
+                    audioPlayer.volume = 1.0;
+                    audioPlayer.currentTime = 0;
                     audioPlayer.play();
                     svgIcon.style.transform = "rotate(180deg)";
                     
@@ -80,6 +82,7 @@
 
                         headsetDOM.classList.add("musicPaused");
                         isMusicPaused = true;
+
                     }
                 }
             }
